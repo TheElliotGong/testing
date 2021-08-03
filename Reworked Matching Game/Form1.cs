@@ -72,5 +72,10 @@ namespace Reworked_Matching_Game
                 clickedLabel.ForeColor = Color.Black;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
