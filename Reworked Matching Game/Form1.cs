@@ -21,7 +21,9 @@ namespace Reworked_Matching_Game
             "!", "!", "N", "N", ",", ",", "k", "k",
             "b", "b", "v", "v", "w", "w", "z", "z"
         };
-
+        /// <summary>
+        /// This method assigns random icons to each of the table boxes.
+        /// </summary>
         private void AssignIconsToSquares()
         {
             // The TableLayoutPanel has 16 labels,
@@ -49,6 +51,26 @@ namespace Reworked_Matching_Game
         private void MatchingGame_Load(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>
+        /// When a label is clicked, we handle the events this way.
+        /// </summary>
+        /// <param name="sender">This is the lable that was clicked</param>
+        /// <param name="e"></param>
+        private void label_Click(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+            
+            //If the clicked label is already black, then we know it's already been revealed.
+            //Thus, we ignore future clicks of the same label afterward.
+            if(clickedLabel != null)
+            {
+                if(clickedLabel.ForeColor == Color.Black)
+                {
+                    return;
+                }
+                clickedLabel.ForeColor = Color.Black;
+            }
         }
     }
 }

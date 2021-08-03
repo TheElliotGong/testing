@@ -1,0 +1,10 @@
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\bin\Debug\Reworked Matching Game.exe.config
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\bin\Debug\Reworked Matching Game.exe
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\bin\Debug\Reworked Matching Game.pdb
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked Matching Game.csprojAssemblyReference.cache
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked_Matching_Game.MatchingGame.resources
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked_Matching_Game.Properties.Resources.resources
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked Matching Game.csproj.GenerateResource.cache
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked Matching Game.csproj.CoreCompileInputs.cache
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked Matching Game.exe
+C:\Users\ewcgo\OneDrive\repos\testing\Reworked Matching Game\obj\Debug\Reworked Matching Game.pdb
