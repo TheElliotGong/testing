@@ -14,6 +14,8 @@ namespace Reworked_Matching_Game
     {
         //This random object helps choose random objects for the squares
         Random rng = new Random();
+        Label firstLabel = null;
+        Label secondLabel = null;
 
         //These letters are interesting icons in our desired font.
         List<String> icons = new List<string>()
@@ -37,7 +39,6 @@ namespace Reworked_Matching_Game
                 {
                     int randomNumber = rng.Next(icons.Count);
                     iconLabel.Text = icons[randomNumber];
-                    // iconLabel.ForeColor = iconLabel.BackColor;
                     icons.RemoveAt(randomNumber);
                 }
             }
@@ -69,7 +70,17 @@ namespace Reworked_Matching_Game
                 {
                     return;
                 }
-                clickedLabel.ForeColor = Color.Black;
+                //If firstLabel is null, this is the first label in
+                //the table that was clicked. So I set this label
+                //to the label that the player clicked, change its color
+                //to black, and return.
+                if(firstLabel == null)
+                {
+                    firstLabel = clickedLabel;
+                    clickedLabel.ForeColor = Color.Black;
+                    return;
+                }
+                
             }
         }
 
