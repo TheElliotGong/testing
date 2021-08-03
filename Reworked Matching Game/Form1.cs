@@ -12,6 +12,15 @@ namespace Reworked_Matching_Game
 {
     public partial class MatchingGame : Form
     {
+        //This random object helps choose random objects for the squares
+        Random rng = new Random();
+
+        //These letters are interesting icons in our desired font.
+        List<String> icons = new List<string>()
+        {
+            "!", "!", "N", "N", ",", ",", "k", "k",
+            "b", "b", "v", "v", "w", "w", "z", "z"
+        };
         public MatchingGame()
         {
             InitializeComponent();
