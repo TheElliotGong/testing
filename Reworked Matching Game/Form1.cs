@@ -16,5 +16,10 @@ namespace Reworked_Matching_Game
         {
             InitializeComponent();
         }
+
+        private void MatchingGame_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
