@@ -84,9 +84,25 @@ namespace Reworked_Matching_Game
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        /// <summary>
+        /// The timer is started when the player clicks 2 icons that don't match.
+        /// So after 3/4 seconds, the timer stops and hides both icons.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Stop the timer
+            timer1.Stop();
+
+            //"Hide" the 2 clicked icons
+            firstLabel.ForeColor = firstLabel.BackColor;
+            secondLabel.ForeColor = secondLabel.BackColor;
+            //Reset both icons so the 1st two clicked icons can be
+            //different.
+            firstLabel = null;
+            secondLabel = null;
         }
     }
 }
