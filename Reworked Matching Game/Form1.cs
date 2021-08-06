@@ -60,6 +60,12 @@ namespace Reworked_Matching_Game
         /// <param name="e"></param>
         private void label_Click(object sender, EventArgs e)
         {
+            //If the timer is still on, I end the method.
+            if(timer1.Enabled == true)
+            {
+                return;
+            }
+
             Label clickedLabel = sender as Label;
             
             //If the clicked label is already black, then we know it's already been revealed.
@@ -80,7 +86,22 @@ namespace Reworked_Matching_Game
                     clickedLabel.ForeColor = Color.Black;
                     return;
                 }
-                
+                //The second label is now the other label to be revealed.
+                secondLabel = clickedLabel;
+                secondLabel.ForeColor = Color.Black;
+
+                CheckForWinner();
+                //If the 2 clicked labels match, then they are 
+                //kept visible. And then, we reset the labels 
+                //so the players can discover new ones.
+                if(firstLabel.Text == secondLabel.Text)
+                {
+                    firstLabel = null;
+                    secondLabel = null;
+                    return;
+                }
+                //Then, I start the timer to show how long the clicked labels remain visible.
+                timer1.Start();
             }
         }
 
@@ -103,6 +124,25 @@ namespace Reworked_Matching_Game
             //different.
             firstLabel = null;
             secondLabel = null;
+        }
+
+        private void CheckForWinner()
+        {
+            foreach(Control control in tableLayoutPanel1.Controls)
+            {
+                Label icon = control as Label;
+
+                if(icon != null)
+                {
+                    if(icon.ForeColor == icon.BackColor)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            MessageBox.Show("Congratulations! You matched all the icons!");
+            Close();
         }
     }
 }
