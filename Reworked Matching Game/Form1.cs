@@ -83,7 +83,7 @@ namespace Reworked_Matching_Game
                 if(firstLabel == null)
                 {
                     firstLabel = clickedLabel;
-                    clickedLabel.ForeColor = Color.Black;
+                    firstLabel.ForeColor = Color.Black;
                     return;
                 }
                 //The second label is now the other label to be revealed.
@@ -100,6 +100,7 @@ namespace Reworked_Matching_Game
                     secondLabel = null;
                     return;
                 }
+                
                 //Then, I start the timer to show how long the clicked labels remain visible.
                 timer1.Start();
             }
@@ -125,22 +126,28 @@ namespace Reworked_Matching_Game
             firstLabel = null;
             secondLabel = null;
         }
-
+        /// <summary>
+        /// This method checks if the player has won. The player wins when all the icons are
+        /// visible, meaning they're all matched.
+        /// </summary>
         private void CheckForWinner()
         {
+            //I go through all the icons in the table and see if they're
+            //visible.
             foreach(Control control in tableLayoutPanel1.Controls)
             {
                 Label icon = control as Label;
 
                 if(icon != null)
                 {
+                    //If any of the icons aren't visible, I end the method.
                     if(icon.ForeColor == icon.BackColor)
                     {
                         return;
                     }
                 }
             }
-
+            //Otherwise, I give the player a congratualory message.
             MessageBox.Show("Congratulations! You matched all the icons!");
             Close();
         }
