@@ -151,5 +151,10 @@ namespace Reworked_Matching_Game
             MessageBox.Show("Congratulations! You matched all the icons!");
             Close();
         }
+
+        private void gameTime_Tick(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
