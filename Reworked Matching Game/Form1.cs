@@ -50,6 +50,7 @@ namespace Reworked_Matching_Game
         }
         public MatchingGame()
         {
+            
             InitializeComponent();
             AssignIconsToSquares();
         }

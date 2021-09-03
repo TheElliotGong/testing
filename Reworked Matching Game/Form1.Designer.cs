@@ -47,7 +47,6 @@ namespace Reworked_Matching_Game
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +76,6 @@ namespace Reworked_Matching_Game
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.time, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -298,15 +296,6 @@ namespace Reworked_Matching_Game
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label_Click);
             // 
-            // time
-            // 
-            this.time.AutoSize = true;
-            this.time.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.time.Location = new System.Drawing.Point(5, 386);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(0, 17);
-            this.time.TabIndex = 16;
-            // 
             // timer1
             // 
             this.timer1.Interval = 750;
@@ -322,7 +311,6 @@ namespace Reworked_Matching_Game
             this.Name = "MatchingGame";
             this.Text = "MatchingGame";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -347,7 +335,6 @@ namespace Reworked_Matching_Game
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label time;
     }
 }
 
