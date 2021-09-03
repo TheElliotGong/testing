@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace Reworked_Matching_Game
 {
+    //Author: Elliot Gong
+    //Purpose: Create a working matching game using Monogame in Visual Studio C#
+    //Date: 7/15/2021/7/20/2021
+    //Restrictions: After clicking 2 slides to reveal their symbol, they will hide after
+    //2 seconds. The game can only be restarted by closing the window and opening the game again.
     public partial class MatchingGame : Form
     {
         //This random object helps choose random objects for the squares
@@ -18,7 +23,7 @@ namespace Reworked_Matching_Game
         Label secondLabel = null;
 
         //These letters are interesting icons in our desired font.
-        List<String> icons = new List<string>()
+        List<string> iconList = new List<string>()
         {
             "!", "!", "N", "N", ",", ",", "k", "k",
             "b", "b", "v", "v", "w", "w", "z", "z"
@@ -28,18 +33,18 @@ namespace Reworked_Matching_Game
         /// </summary>
         private void AssignIconsToSquares()
         {
-            // The TableLayoutPanel has 16 labels,
-            // and the icon list has 16 icons,
-            // so an icon is pulled at random from the list
-            // and added to each label
+           //I sort through all the icons in the list and randomly assign them 
+           //to each label. I then delete the icons that have been assigned so they
+           //don't get mistakenly selected again.
             foreach (Control control in tableLayoutPanel1.Controls)
             {
-                Label iconLabel = control as Label;
-                if (iconLabel != null)
+                Label icon = control as Label;
+                if (icon != null)
                 {
-                    int randomNumber = rng.Next(icons.Count);
-                    iconLabel.Text = icons[randomNumber];
-                    icons.RemoveAt(randomNumber);
+                    int randomNumber = rng.Next(iconList.Count);
+                    icon.Text = iconList[randomNumber];
+                    icon.ForeColor = icon.BackColor;
+                    iconList.RemoveAt(randomNumber);
                 }
             }
         }
@@ -49,10 +54,6 @@ namespace Reworked_Matching_Game
             AssignIconsToSquares();
         }
 
-        private void MatchingGame_Load(object sender, EventArgs e)
-        {
-
-        }
         /// <summary>
         /// When a label is clicked, we handle the events this way.
         /// </summary>
@@ -152,9 +153,6 @@ namespace Reworked_Matching_Game
             Close();
         }
 
-        private void gameTime_Tick(object sender, EventArgs e)
-        {
-           
-        }
+        
     }
 }
